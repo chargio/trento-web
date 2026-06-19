@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.40.3">
-    <meta name="project" content="Trento Web v3.1.0">
+    <meta name="project" content="Trento Web v3.1.1">
 
 
-    <title>API Reference — Trento Web v3.1.0</title>
+    <title>API Reference — Trento Web v3.1.1</title>
 
     <link rel="stylesheet" href="dist/html-elixir-NHQLCD6Y.css" />
 
-    <script defer src="dist/sidebar_items-A97BE0B9.js"></script>
+    <script defer src="dist/sidebar_items-F611C42A.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-Y2MUTVIN.js"></script>
 
@@ -41,7 +41,7 @@
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v3.1.0
+          v3.1.1
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@ Trento Web
 
 <div id="top-content">
   <div class="heading-with-actions top-heading">
-    <h1>API Reference <small class="app-vsn">Trento Web v#3.1.0</small></h1>
+    <h1>API Reference <small class="app-vsn">Trento Web v#3.1.1</small></h1>
 <a href="api-reference.md" title="Copy Markdown (hold Ctrl/Cmd and click it to open as Markdown)" class="copy-markdown icon-action" rel="help">
   <i class="ri-markdown-line" aria-hidden="true"></i>
   <span class="sr-only">Copy Markdown</span>
@@ -565,6 +565,15 @@ Values are coming from pacemaker directly:
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Clusters.Enums.SbdDeviceStatus.html" translate="no">Trento.<wbr />Clusters.<wbr />Enums.<wbr />SbdDeviceStatus</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents the SBD device status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Clusters.Events.ChecksSelected.html" translate="no">Trento.<wbr />Clusters.<wbr />Events.<wbr />ChecksSelected</a>
 
   </div>
@@ -682,6 +691,15 @@ It is used to trigger the stream archiving process and it contains the snapshot 
 
     <div class="summary-synopsis"><p>This event is emitted when a cluster is rolled up and its stream is archived.
 It contains the snapshot of the cluster aggregate that will be used to restore the aggregate state.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Clusters.Events.ClusterSbdHealthChanged.html" translate="no">Trento.<wbr />Clusters.<wbr />Events.<wbr />ClusterSbdHealthChanged</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This event is emitted when the health of the SBD fencing in a cluster changes.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1022,6 +1040,15 @@ sap_system_id was still used.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Databases.Events.DatabaseInstanceStatusChanged.html" translate="no">Trento.<wbr />Databases.<wbr />Events.<wbr />DatabaseInstanceStatusChanged</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This event is emitted when a database instance status has changed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Databases.Events.DatabaseInstanceSystemReplicationChanged.html" translate="no">Trento.<wbr />Databases.<wbr />Events.<wbr />DatabaseInstanceSystemReplicationChanged</a>
 
   </div>
@@ -1083,6 +1110,15 @@ It is used to trigger the stream archiving process and it contains the snapshot 
   </div>
 
     <div class="summary-synopsis"><p>This event is emitted when a database is deregistered (decommissioned)</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Databases.Events.Upcaster.UpcastHelper.html" translate="no">Trento.<wbr />Databases.<wbr />Events.<wbr />Upcaster.<wbr />UpcastHelper</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Upcasting function helpers.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3432,6 +3468,15 @@ installed.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.SapSystems.Enums.Status.html" translate="no">Trento.<wbr />SapSystems.<wbr />Enums.<wbr />Status</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents SAP and HANA instances status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.SapSystems.Events.ApplicationInstanceDeregistered.html" translate="no">Trento.<wbr />SapSystems.<wbr />Events.<wbr />ApplicationInstanceDeregistered</a>
 
   </div>
@@ -3482,6 +3527,15 @@ installed.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>This event is emitted when a database application is registered to the SAP system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.SapSystems.Events.ApplicationInstanceStatusChanged.html" translate="no">Trento.<wbr />SapSystems.<wbr />Events.<wbr />ApplicationInstanceStatusChanged</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This event is emitted when a application instance status has changed.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3719,6 +3773,15 @@ It is used to trigger the stream archiving process and it contains the snapshot 
 
     <div class="summary-synopsis"><p>The SAP system aggregate manages all the domain logic related to
 deployed SAP systems, which is composed by the application layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.SapSystems.Services.HealthService.html" translate="no">Trento.<wbr />SapSystems.<wbr />Services.<wbr />HealthService</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides SAP system/Database instances health related functions.</p></div>
 
 </div>
 <div class="summary-row">

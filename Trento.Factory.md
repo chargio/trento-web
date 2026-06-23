@@ -213,6 +213,8 @@ Raises a helpful error if no factory is defined.
 
 # `operation_completed_with_failed_request_v1_factory`
 
+# `operation_entry_factory`
+
 # `params_for`
 
 # `params_with_assocs`
@@ -224,6 +226,8 @@ Raises a helpful error if no factory is defined.
 # `random_ai_model_factory`
 
 # `random_ai_provider_factory`
+
+# `random_langchain_model_factory`
 
 # `register_application_instance_command_factory`
 

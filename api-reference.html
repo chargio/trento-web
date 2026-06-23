@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.40.3">
-    <meta name="project" content="Trento Web v3.1.1">
+    <meta name="project" content="Trento Web v3.1.2">
 
 
-    <title>API Reference — Trento Web v3.1.1</title>
+    <title>API Reference — Trento Web v3.1.2</title>
 
     <link rel="stylesheet" href="dist/html-elixir-NHQLCD6Y.css" />
 
-    <script defer src="dist/sidebar_items-F611C42A.js"></script>
+    <script defer src="dist/sidebar_items-F473EF46.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-Y2MUTVIN.js"></script>
 
@@ -41,7 +41,7 @@
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v3.1.1
+          v3.1.2
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@ Trento Web
 
 <div id="top-content">
   <div class="heading-with-actions top-heading">
-    <h1>API Reference <small class="app-vsn">Trento Web v#3.1.1</small></h1>
+    <h1>API Reference <small class="app-vsn">Trento Web v#3.1.2</small></h1>
 <a href="api-reference.md" title="Copy Markdown (hold Ctrl/Cmd and click it to open as Markdown)" class="copy-markdown icon-action" rel="help">
   <i class="ri-markdown-line" aria-hidden="true"></i>
   <span class="sr-only">Copy Markdown</span>
@@ -142,6 +142,34 @@ Trento Web
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.AI.Agent.html" translate="no">Trento.<wbr />AI.<wbr />Agent</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Factory + lifecycle entrypoint for the Trento AI Assistant agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.Agent.Server.html" translate="no">Trento.<wbr />AI.<wbr />Agent.<wbr />Server</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Behaviour wrapping the subset of <a href="https://hexdocs.pm/sagents/0.7.0/Sagents.AgentServer.html"><code class="inline">Sagents.AgentServer</code></a> that
+<a href="Trento.AI.Agent.html#run/2"><code class="inline">Trento.AI.Agent.run/2</code></a> calls into.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.Agent.Supervisor.html" translate="no">Trento.<wbr />AI.<wbr />Agent.<wbr />Supervisor</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Behaviour wrapping <a href="https://hexdocs.pm/sagents/0.7.0/Sagents.AgentsDynamicSupervisor.html#start_agent_sync/1"><code class="inline">Sagents.AgentsDynamicSupervisor.start_agent_sync/1</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.AI.ApplicationConfigLoader.html" translate="no">Trento.<wbr />AI.<wbr />ApplicationConfigLoader</a>
 
   </div>
@@ -160,11 +188,91 @@ Trento Web
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.AI.ControllerSpecs.html" translate="no">Trento.<wbr />AI.<wbr />ControllerSpecs</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Per-action AI-tool metadata macro. Sits next to <a href="https://hexdocs.pm/open_api_spex/3.22.3/OpenApiSpex.ControllerSpecs.html#operation/2"><code class="inline">OpenApiSpex.ControllerSpecs.operation/2</code></a>
+in controllers and labels the immediately following public function as an AI tool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.LLMBuilder.html" translate="no">Trento.<wbr />AI.<wbr />LLMBuilder</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Builds a LangChain chat-model struct for a given User.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.AI.LLMRegistry.html" translate="no">Trento.<wbr />AI.<wbr />LLMRegistry</a>
 
   </div>
 
     <div class="summary-synopsis"><p>This module is responsible for managing the registry of available LLM providers and their models.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.OpenApiToolBuilder.html" translate="no">Trento.<wbr />AI.<wbr />OpenApiToolBuilder</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Transport-agnostic helpers shared by every <a href="Trento.AI.ToolSource.html"><code class="inline">Trento.AI.ToolSource</code></a> that
+derives <a href="https://hexdocs.pm/langchain/0.8.13/LangChain.Function.html"><code class="inline">LangChain.Function</code></a>s from <code class="inline">%OpenApiSpex.Operation{}</code> structs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.OperationEntry.html" translate="no">Trento.<wbr />AI.<wbr />OperationEntry</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Transport-agnostic catalog entry shared by every <a href="Trento.AI.ToolSource.html"><code class="inline">Trento.AI.ToolSource</code></a>
+that derives AI tools from <code class="inline">%OpenApiSpex.Operation{}</code> structs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.RemoteHttpTool.html" translate="no">Trento.<wbr />AI.<wbr />RemoteHttpTool</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Translates a <a href="Trento.AI.OperationEntry.html"><code class="inline">Trento.AI.OperationEntry</code></a> into a <code class="inline">%LangChain.Function{}</code>
+whose execution dispatches an authenticated HTTP request against a
+remote service described by its OpenAPI document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.RemoteOpenApiToolSource.html" translate="no">Trento.<wbr />AI.<wbr />RemoteOpenApiToolSource</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><a href="Trento.AI.ToolSource.html"><code class="inline">Trento.AI.ToolSource</code></a> implementation that derives AI assistant tools
+from a remote service's OpenAPI document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.ToolSource.html" translate="no">Trento.<wbr />AI.<wbr />ToolSource</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Behaviour for modules that contribute AI assistant tools to
+<a href="Trento.AI.ToolsRegistry.html"><code class="inline">Trento.AI.ToolsRegistry</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.ToolsRegistry.html" translate="no">Trento.<wbr />AI.<wbr />ToolsRegistry</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Aggregates AI assistant tools from every configured
+<a href="Trento.AI.ToolSource.html"><code class="inline">Trento.AI.ToolSource</code></a>.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2727,6 +2835,26 @@ and its calculated health is taken into account in host's aggregated health.</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.AI.SagentsAgentServer.html" translate="no">Trento.<wbr />Infrastructure.<wbr />AI.<wbr />SagentsAgentServer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Production implementation of <a href="Trento.AI.Agent.Server.html"><code class="inline">Trento.AI.Agent.Server</code></a> —
+delegates to <a href="https://hexdocs.pm/sagents/0.7.0/Sagents.AgentServer.html"><code class="inline">Sagents.AgentServer</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.AI.SagentsDynamicSupervisor.html" translate="no">Trento.<wbr />Infrastructure.<wbr />AI.<wbr />SagentsDynamicSupervisor</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Production implementation of <a href="Trento.AI.Agent.Supervisor.html"><code class="inline">Trento.AI.Agent.Supervisor</code></a> —
+delegates to <a href="https://hexdocs.pm/sagents/0.7.0/Sagents.AgentsDynamicSupervisor.html"><code class="inline">Sagents.AgentsDynamicSupervisor</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Alerting.Alerting.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Alerting.<wbr />Alerting</a>
 
   </div>
@@ -3061,15 +3189,6 @@ Here is where the actual integration with the external system happens and releva
   </div>
 
     <div class="summary-synopsis"><p>Prometheus integration service</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="Trento.Infrastructure.Prometheus.Adapter.HttpClient.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Prometheus.<wbr />Adapter.<wbr />HttpClient</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>HTTP client behaviour for Prometheus API calls.</p></div>
 
 </div>
 <div class="summary-row">
@@ -4053,6 +4172,28 @@ check supported values and validate possible values</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Support.HttpClient.html" translate="no">Trento.<wbr />Support.<wbr />HttpClient</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Shared HTTP client behaviour wrapping <a href="https://hexdocs.pm/httpoison/2.2.3/HTTPoison.html"><code class="inline">HTTPoison</code></a>. The default implementation
+forwards to HTTPoison and injects secure SSL defaults (<code class="inline">verify_peer</code> with the
+system CA bundle); callers can override individual SSL keys by passing their
+own <code class="inline">:ssl</code> keyword. Tests substitute a Mox mock via config.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Support.HttpUtils.html" translate="no">Trento.<wbr />Support.<wbr />HttpUtils</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>HTTP-related utilities shared across infrastructure adapters and the
+AI tool dispatchers.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Support.IntermediateEvent.html" translate="no">Trento.<wbr />Support.<wbr />IntermediateEvent</a>
 
   </div>
@@ -4196,6 +4337,65 @@ for data mapping and validation by wrapping Ecto.Schema and Ecto.Changeset.</p><
 
     <div class="summary-synopsis"><p>The entrypoint for defining your web interface, such
 as controllers, views, channels and so on.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.AI.ControllerTool.html" translate="no">TrentoWeb.<wbr />AI.<wbr />ControllerTool</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Translates a <a href="TrentoWeb.AI.McpRouteIndex.Entry.html"><code class="inline">TrentoWeb.AI.McpRouteIndex.Entry</code></a> into a
+<code class="inline">%LangChain.Function{}</code> whose execution dispatches into the controller's
+real action by re-entering <a href="TrentoWeb.Endpoint.html#call/2"><code class="inline">TrentoWeb.Endpoint.call/2</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.AI.ControllerToolSource.html" translate="no">TrentoWeb.<wbr />AI.<wbr />ControllerToolSource</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><a href="Trento.AI.ToolSource.html"><code class="inline">Trento.AI.ToolSource</code></a> implementation that materialises a
+<a href="https://hexdocs.pm/langchain/0.8.13/LangChain.Function.html"><code class="inline">LangChain.Function</code></a> for every MCP-tagged controller route discovered
+by <a href="TrentoWeb.AI.McpRouteIndex.html"><code class="inline">TrentoWeb.AI.McpRouteIndex</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.AI.McpRouteIndex.html" translate="no">TrentoWeb.<wbr />AI.<wbr />McpRouteIndex</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Index of MCP-tagged controller routes, built on demand from the
+Phoenix router + OpenApiSpex operations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.AI.McpRouteIndex.Entry.html" translate="no">TrentoWeb.<wbr />AI.<wbr />McpRouteIndex.<wbr />Entry</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>One catalog entry for <a href="TrentoWeb.AI.McpRouteIndex.html"><code class="inline">TrentoWeb.AI.McpRouteIndex</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.AIAssistant.AgUi.html" translate="no">TrentoWeb.<wbr />AIAssistant.<wbr />AgUi</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AG-UI protocol emission helpers for <a href="TrentoWeb.AIAssistantChannel.html"><code class="inline">TrentoWeb.AIAssistantChannel</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.AIAssistantChannel.html" translate="no">TrentoWeb.<wbr />AIAssistantChannel</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Phoenix Channel for the AI Assistant.</p></div>
 
 </div>
 <div class="summary-row">

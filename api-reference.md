@@ -1,4 +1,4 @@
-# Trento Web v3.1.1 - API Reference
+# Trento Web v3.1.2 - API Reference
 
 ## Modules
 
@@ -8,12 +8,33 @@
 
 - [Trento.AI](Trento.AI.md): The `Trento.AI` module provides functions to interact with the AI features of the Trento application.
 
+- [Trento.AI.Agent](Trento.AI.Agent.md): Factory + lifecycle entrypoint for the Trento AI Assistant agent.
+- [Trento.AI.Agent.Server](Trento.AI.Agent.Server.md): Behaviour wrapping the subset of `Sagents.AgentServer` that
+`Trento.AI.Agent.run/2` calls into.
+- [Trento.AI.Agent.Supervisor](Trento.AI.Agent.Supervisor.md): Behaviour wrapping `Sagents.AgentsDynamicSupervisor.start_agent_sync/1`.
 - [Trento.AI.ApplicationConfigLoader](Trento.AI.ApplicationConfigLoader.md): This module is responsible for loading the AI application configuration and providing access to it.
 
 - [Trento.AI.Configurations](Trento.AI.Configurations.md): This module is responsible for managing user AI configurations.
 
+- [Trento.AI.ControllerSpecs](Trento.AI.ControllerSpecs.md): Per-action AI-tool metadata macro. Sits next to `OpenApiSpex.ControllerSpecs.operation/2`
+in controllers and labels the immediately following public function as an AI tool.
+- [Trento.AI.LLMBuilder](Trento.AI.LLMBuilder.md): Builds a LangChain chat-model struct for a given User.
+
 - [Trento.AI.LLMRegistry](Trento.AI.LLMRegistry.md): This module is responsible for managing the registry of available LLM providers and their models.
 
+- [Trento.AI.OpenApiToolBuilder](Trento.AI.OpenApiToolBuilder.md): Transport-agnostic helpers shared by every `Trento.AI.ToolSource` that
+derives `LangChain.Function`s from `%OpenApiSpex.Operation{}` structs.
+- [Trento.AI.OperationEntry](Trento.AI.OperationEntry.md): Transport-agnostic catalog entry shared by every `Trento.AI.ToolSource`
+that derives AI tools from `%OpenApiSpex.Operation{}` structs.
+- [Trento.AI.RemoteHttpTool](Trento.AI.RemoteHttpTool.md): Translates a `Trento.AI.OperationEntry` into a `%LangChain.Function{}`
+whose execution dispatches an authenticated HTTP request against a
+remote service described by its OpenAPI document.
+- [Trento.AI.RemoteOpenApiToolSource](Trento.AI.RemoteOpenApiToolSource.md): `Trento.AI.ToolSource` implementation that derives AI assistant tools
+from a remote service's OpenAPI document.
+- [Trento.AI.ToolSource](Trento.AI.ToolSource.md): Behaviour for modules that contribute AI assistant tools to
+`Trento.AI.ToolsRegistry`.
+- [Trento.AI.ToolsRegistry](Trento.AI.ToolsRegistry.md): Aggregates AI assistant tools from every configured
+`Trento.AI.ToolSource`.
 - [Trento.Abilities](Trento.Abilities.md): The Abilities context.
 
 - [Trento.Abilities.UsersAbilities](Trento.Abilities.UsersAbilities.md): Many to many table schema used to connect users and abilities.
@@ -654,6 +675,12 @@ Here is where the actual integration with the external system happens and releva
   - [Trento.Infrastructure.Commanded.EventHandlers.StreamRollUpEventHandler](Trento.Infrastructure.Commanded.EventHandlers.StreamRollUpEventHandler.md): This module is responsible for triggering the roll-up of an aggregate.
 
 - Infrastructure
+  - [Trento.Infrastructure.AI.SagentsAgentServer](Trento.Infrastructure.AI.SagentsAgentServer.md): Production implementation of `Trento.AI.Agent.Server` —
+delegates to `Sagents.AgentServer`.
+
+  - [Trento.Infrastructure.AI.SagentsDynamicSupervisor](Trento.Infrastructure.AI.SagentsDynamicSupervisor.md): Production implementation of `Trento.AI.Agent.Supervisor` —
+delegates to `Sagents.AgentsDynamicSupervisor`.
+
   - [Trento.Infrastructure.Alerting.Alerting](Trento.Infrastructure.Alerting.Alerting.md): Provides a set of functions of Alerting related usecases.
 
   - [Trento.Infrastructure.Catalog.AMQP.Consumer](Trento.Infrastructure.Catalog.AMQP.Consumer.md): AMQP catalog consumer.
@@ -695,8 +722,6 @@ Here is where the actual integration with the external system happens and releva
   - [Trento.Infrastructure.Operations.AMQP.Publisher](Trento.Infrastructure.Operations.AMQP.Publisher.md): AMQP operations publisher
 
   - [Trento.Infrastructure.Prometheus](Trento.Infrastructure.Prometheus.md): Prometheus integration service
-
-  - [Trento.Infrastructure.Prometheus.Adapter.HttpClient](Trento.Infrastructure.Prometheus.Adapter.HttpClient.md): HTTP client behaviour for Prometheus API calls.
 
   - [Trento.Infrastructure.Prometheus.ChartIntegration](Trento.Infrastructure.Prometheus.ChartIntegration.md): ChartIntegration provides a mechanism for mapping prometheus query information to domain
 Chart time series objects
@@ -761,6 +786,13 @@ check supported values and validate possible values
   - [Trento.Support.Helpers.AbilitiesTestHelper](Trento.Support.Helpers.AbilitiesTestHelper.md): Helper functions to setup abilities.
   - [Trento.Support.Helpers.AlertingSettingsHelper](Trento.Support.Helpers.AlertingSettingsHelper.md): Test helper functions for alerting settings.
 
+  - [Trento.Support.HttpClient](Trento.Support.HttpClient.md): Shared HTTP client behaviour wrapping `HTTPoison`. The default implementation
+forwards to HTTPoison and injects secure SSL defaults (`verify_peer` with the
+system CA bundle); callers can override individual SSL keys by passing their
+own `:ssl` keyword. Tests substitute a Mox mock via config.
+
+  - [Trento.Support.HttpUtils](Trento.Support.HttpUtils.md): HTTP-related utilities shared across infrastructure adapters and the
+AI tool dispatchers.
   - [Trento.Support.IntermediateEvent](Trento.Support.IntermediateEvent.md): Represents an event that has been deserialized from the database, but not yet casted to its final type.
   - [Trento.Support.JsonbSerializer](Trento.Support.JsonbSerializer.md): Serialize to/from PostgreSQL's native `jsonb` format.
 Requires events to be defined by the `defevent` macro.
@@ -778,6 +810,18 @@ for data mapping and validation by wrapping Ecto.Schema and Ecto.Changeset.
 - Web
   - [TrentoWeb](TrentoWeb.md): The entrypoint for defining your web interface, such
 as controllers, views, channels and so on.
+  - [TrentoWeb.AI.ControllerTool](TrentoWeb.AI.ControllerTool.md): Translates a `TrentoWeb.AI.McpRouteIndex.Entry` into a
+`%LangChain.Function{}` whose execution dispatches into the controller's
+real action by re-entering `TrentoWeb.Endpoint.call/2`.
+  - [TrentoWeb.AI.ControllerToolSource](TrentoWeb.AI.ControllerToolSource.md): `Trento.AI.ToolSource` implementation that materialises a
+`LangChain.Function` for every MCP-tagged controller route discovered
+by `TrentoWeb.AI.McpRouteIndex`.
+
+  - [TrentoWeb.AI.McpRouteIndex](TrentoWeb.AI.McpRouteIndex.md): Index of MCP-tagged controller routes, built on demand from the
+Phoenix router + OpenApiSpex operations.
+  - [TrentoWeb.AI.McpRouteIndex.Entry](TrentoWeb.AI.McpRouteIndex.Entry.md): One catalog entry for `TrentoWeb.AI.McpRouteIndex`.
+  - [TrentoWeb.AIAssistant.AgUi](TrentoWeb.AIAssistant.AgUi.md): AG-UI protocol emission helpers for `TrentoWeb.AIAssistantChannel`.
+  - [TrentoWeb.AIAssistantChannel](TrentoWeb.AIAssistantChannel.md): Phoenix Channel for the AI Assistant.
   - [TrentoWeb.ActivityLogChannel](TrentoWeb.ActivityLogChannel.md): Activity Log channel, each user is subscribed to this channel,
   - [TrentoWeb.Auth.AccessToken](TrentoWeb.Auth.AccessToken.md):   Jwt Token is the module responsible for creating a proper jwt access token.
   - [TrentoWeb.Auth.ApiKey](TrentoWeb.Auth.ApiKey.md): ApiKey is the module responsible for creating a proper jwt api token used for accessing the api token protected resource.

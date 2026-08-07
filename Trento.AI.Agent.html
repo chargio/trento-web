@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.40.3">
-    <meta name="project" content="Trento Web v3.1.2">
+    <meta name="project" content="Trento Web v3.1.5">
 
 
-    <title>Trento.AI.Agent — Trento Web v3.1.2</title>
+    <title>Trento.AI.Agent — Trento Web v3.1.5</title>
 
     <link rel="stylesheet" href="dist/html-elixir-NHQLCD6Y.css" />
 
-    <script defer src="dist/sidebar_items-0F7E2E3F.js"></script>
+    <script defer src="dist/sidebar_items-A7D82352.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-Y2MUTVIN.js"></script>
 
@@ -41,7 +41,7 @@
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v3.1.2
+          v3.1.5
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ Trento Web
   <div class="heading-with-actions top-heading">
     <h1>
       <span translate="no">Trento.<wbr />AI.<wbr />Agent</span> 
-      <small class="app-vsn" translate="no">(Trento Web v3.1.2)</small>
+      <small class="app-vsn" translate="no">(Trento Web v3.1.5)</small>
 
     </h1>
 
@@ -160,6 +160,16 @@ want to inspect the configured agent.</p>
         <div class="summary-synopsis"><p>Ensure the agent for <code class="inline">:agent_id</code> is running, subscribe the calling
 process to its event stream, and send the user prompt. Returns <code class="inline">:ok</code>
 or the first <code class="inline">{:error, reason}</code> from the start/subscribe/send chain.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#stop/1" data-no-tooltip="" translate="no">stop(agent_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Stops the running agent for <code class="inline">agent_id</code>, terminating any in-flight run.</p></div>
 
     </div>
 
@@ -239,6 +249,35 @@ to tools that need it, without polluting <code class="inline">:scope</code>.</li
 <p>Ensure the agent for <code class="inline">:agent_id</code> is running, subscribe the calling
 process to its event stream, and send the user prompt. Returns <code class="inline">:ok</code>
 or the first <code class="inline">{:error, reason}</code> from the start/subscribe/send chain.</p>
+  </section>
+</section>
+<section class="detail" id="stop/1">
+
+  <div class="detail-header">
+    <a href="#stop/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">stop(agent_id)</h1>
+
+
+        <a href="https://github.com/trento-project/web/blob/main/lib/trento/ai/agent.ex#L89" class="icon-action" rel="help nofollow" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> stop(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: :ok | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+
+      </div>
+
+<p>Stops the running agent for <code class="inline">agent_id</code>, terminating any in-flight run.</p><p>Best-effort — returns the supervisor's result verbatim (<code class="inline">{:error, term()}</code>
+when no agent is running for the id).</p>
   </section>
 </section>
 

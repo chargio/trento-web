@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.40.4">
-    <meta name="project" content="Trento Web v3.1.6">
+    <meta name="project" content="Trento Web v3.2.0">
 
 
-    <title>API Reference — Trento Web v3.1.6</title>
+    <title>API Reference — Trento Web v3.2.0</title>
 
     <link rel="stylesheet" href="dist/html-elixir-RXHHCTJW.css" />
 
-    <script defer src="dist/sidebar_items-2DAFE3BC.js"></script>
+    <script defer src="dist/sidebar_items-15447966.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-MI33G4N7.js"></script>
 
@@ -41,7 +41,7 @@
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v3.1.6
+          v3.2.0
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@ Trento Web
 
 <div id="top-content">
   <div class="heading-with-actions top-heading">
-    <h1>API Reference <small class="app-vsn">Trento Web v#3.1.6</small></h1>
+    <h1>API Reference <small class="app-vsn">Trento Web v#3.2.0</small></h1>
 <a href="api-reference.md" title="Copy Markdown (hold Ctrl/Cmd and click it to open as Markdown)" class="copy-markdown icon-action" rel="help">
   <i class="ri-markdown-line" aria-hidden="true"></i>
   <span class="sr-only">Copy Markdown</span>
@@ -4392,6 +4392,28 @@ check supported values and validate possible values</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Test helper functions for alerting settings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Support.Helpers.TestCertificates.html" translate="no">Trento.<wbr />Support.<wbr />Helpers.<wbr />TestCertificates</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generates, with the <code class="inline">openssl</code> command, the certificate chains used to test
+<a href="Trento.Support.HttpClient.html"><code class="inline">Trento.Support.HttpClient</code></a> against a real TLS server.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Support.Helpers.TlsTestServer.html" translate="no">Trento.<wbr />Support.<wbr />Helpers.<wbr />TlsTestServer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A minimal HTTPS server for tests: it listens on 127.0.0.1 on a random port,
+serves the given certificate chain and answers every request with
+<code class="inline">200 ok</code>. A client that rejects the chain fails the handshake, the server
+ignores that and accepts the next connection.</p></div>
 
 </div>
 <div class="summary-row">

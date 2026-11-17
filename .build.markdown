@@ -47,6 +47,8 @@ Trento.Charts.Hosts.HostFilesystemChart.md
 Trento.Charts.Hosts.HostMemoryChart.md
 Trento.Charts.SampledMetric.md
 Trento.Charts.md
+Trento.Checks.Enums.FrequencyUnit.md
+Trento.Checks.Frequency.md
 Trento.Clusters.Cluster.md
 Trento.Clusters.ClusterEnrichmentData.md
 Trento.Clusters.Commands.CompleteChecksExecution.md
@@ -353,6 +355,14 @@ Trento.Infrastructure.Commanded.RollUp.RollUp.md
 Trento.Infrastructure.ComponentVersions.Gen.md
 Trento.Infrastructure.ComponentVersions.md
 Trento.Infrastructure.Discovery.AMQP.Publisher.md
+Trento.Infrastructure.Jobs.ActivityLogCleaningJob.md
+Trento.Infrastructure.Jobs.ApiKeyExpirationAlertJob.md
+Trento.Infrastructure.Jobs.ClustersChecksExecutionJob.md
+Trento.Infrastructure.Jobs.DiscoveryEventsPruningJob.md
+Trento.Infrastructure.Jobs.HostsChecksExecutionJob.md
+Trento.Infrastructure.Jobs.Plugins.Periodic.md
+Trento.Infrastructure.Jobs.SoftwareUpdatesDiscoveryJob.md
+Trento.Infrastructure.Jobs.md
 Trento.Infrastructure.Messaging.Adapter.AMQP.Consumer.md
 Trento.Infrastructure.Messaging.Adapter.AMQP.Publisher.md
 Trento.Infrastructure.Messaging.Adapter.AMQP.md
@@ -382,9 +392,11 @@ Trento.Operations.ApplicationInstancePolicy.md
 Trento.Operations.ClusterPolicy.md
 Trento.Operations.DatabaseInstancePolicy.md
 Trento.Operations.DatabasePolicy.md
+Trento.Operations.Enums.ClusterBulkOperations.md
 Trento.Operations.Enums.ClusterHostOperations.md
 Trento.Operations.Enums.ClusterOperations.md
 Trento.Operations.Enums.DatabaseOperations.md
+Trento.Operations.Enums.HostBulkOperations.md
 Trento.Operations.Enums.HostOperations.md
 Trento.Operations.Enums.SapInstanceOperations.md
 Trento.Operations.Enums.SapSystemOperations.md
@@ -449,11 +461,11 @@ Trento.SapSystems.SapSystem.md
 Trento.SapSystems.Services.HealthService.md
 Trento.SapSystems.Services.HealthSummaryService.md
 Trento.SapSystems.md
-Trento.Scheduler.md
 Trento.Services.HealthService.md
 Trento.Settings.ActivityLogSettings.md
 Trento.Settings.AlertingSettings.md
 Trento.Settings.ApiKeySettings.md
+Trento.Settings.ChecksFrequencySettings.md
 Trento.Settings.InstallationSettings.md
 Trento.Settings.Policy.md
 Trento.Settings.SSOCertificatesSettings.md
@@ -507,6 +519,7 @@ TrentoWeb.ActivityLogChannel.md
 TrentoWeb.Auth.AccessToken.md
 TrentoWeb.Auth.ApiKey.md
 TrentoWeb.Auth.AssentSamlStrategy.md
+TrentoWeb.Auth.FakeIdentityProvider.md
 TrentoWeb.Auth.PersonalAccessToken.md
 TrentoWeb.Auth.RefreshToken.md
 TrentoWeb.Auth.Tokens.md
@@ -554,6 +567,7 @@ TrentoWeb.Plugs.AppJWTAuthPlug.md
 TrentoWeb.Plugs.AuthenticateAPIKeyPlug.md
 TrentoWeb.Plugs.ChartsDisabledPlug.md
 TrentoWeb.Plugs.ExternalIdpGuardPlug.md
+TrentoWeb.Plugs.InvalidCredentialsErrorPlug.md
 TrentoWeb.Plugs.LoadUserPlug.md
 TrentoWeb.Plugs.NormalizeListsPlug.md
 TrentoWeb.Plugs.OperationsPolicyPlug.md
@@ -583,6 +597,7 @@ TrentoWeb.V1.HealthOverviewController.md
 TrentoWeb.V1.HealthOverviewJSON.md
 TrentoWeb.V1.HostController.md
 TrentoWeb.V1.HostJSON.md
+TrentoWeb.V1.OperationJSON.md
 TrentoWeb.V1.PersonalAccessTokensController.md
 TrentoWeb.V1.ProfileController.md
 TrentoWeb.V1.ProfileJSON.md

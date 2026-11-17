@@ -48,6 +48,8 @@ Trento.Charts.Hosts.HostFilesystemChart.html
 Trento.Charts.Hosts.HostMemoryChart.html
 Trento.Charts.SampledMetric.html
 Trento.Charts.html
+Trento.Checks.Enums.FrequencyUnit.html
+Trento.Checks.Frequency.html
 Trento.Clusters.Cluster.html
 Trento.Clusters.ClusterEnrichmentData.html
 Trento.Clusters.Commands.CompleteChecksExecution.html
@@ -354,6 +356,14 @@ Trento.Infrastructure.Commanded.RollUp.RollUp.html
 Trento.Infrastructure.ComponentVersions.Gen.html
 Trento.Infrastructure.ComponentVersions.html
 Trento.Infrastructure.Discovery.AMQP.Publisher.html
+Trento.Infrastructure.Jobs.ActivityLogCleaningJob.html
+Trento.Infrastructure.Jobs.ApiKeyExpirationAlertJob.html
+Trento.Infrastructure.Jobs.ClustersChecksExecutionJob.html
+Trento.Infrastructure.Jobs.DiscoveryEventsPruningJob.html
+Trento.Infrastructure.Jobs.HostsChecksExecutionJob.html
+Trento.Infrastructure.Jobs.Plugins.Periodic.html
+Trento.Infrastructure.Jobs.SoftwareUpdatesDiscoveryJob.html
+Trento.Infrastructure.Jobs.html
 Trento.Infrastructure.Messaging.Adapter.AMQP.Consumer.html
 Trento.Infrastructure.Messaging.Adapter.AMQP.Publisher.html
 Trento.Infrastructure.Messaging.Adapter.AMQP.html
@@ -383,9 +393,11 @@ Trento.Operations.ApplicationInstancePolicy.html
 Trento.Operations.ClusterPolicy.html
 Trento.Operations.DatabaseInstancePolicy.html
 Trento.Operations.DatabasePolicy.html
+Trento.Operations.Enums.ClusterBulkOperations.html
 Trento.Operations.Enums.ClusterHostOperations.html
 Trento.Operations.Enums.ClusterOperations.html
 Trento.Operations.Enums.DatabaseOperations.html
+Trento.Operations.Enums.HostBulkOperations.html
 Trento.Operations.Enums.HostOperations.html
 Trento.Operations.Enums.SapInstanceOperations.html
 Trento.Operations.Enums.SapSystemOperations.html
@@ -450,11 +462,11 @@ Trento.SapSystems.SapSystem.html
 Trento.SapSystems.Services.HealthService.html
 Trento.SapSystems.Services.HealthSummaryService.html
 Trento.SapSystems.html
-Trento.Scheduler.html
 Trento.Services.HealthService.html
 Trento.Settings.ActivityLogSettings.html
 Trento.Settings.AlertingSettings.html
 Trento.Settings.ApiKeySettings.html
+Trento.Settings.ChecksFrequencySettings.html
 Trento.Settings.InstallationSettings.html
 Trento.Settings.Policy.html
 Trento.Settings.SSOCertificatesSettings.html
@@ -508,6 +520,7 @@ TrentoWeb.ActivityLogChannel.html
 TrentoWeb.Auth.AccessToken.html
 TrentoWeb.Auth.ApiKey.html
 TrentoWeb.Auth.AssentSamlStrategy.html
+TrentoWeb.Auth.FakeIdentityProvider.html
 TrentoWeb.Auth.PersonalAccessToken.html
 TrentoWeb.Auth.RefreshToken.html
 TrentoWeb.Auth.Tokens.html
@@ -555,6 +568,7 @@ TrentoWeb.Plugs.AppJWTAuthPlug.html
 TrentoWeb.Plugs.AuthenticateAPIKeyPlug.html
 TrentoWeb.Plugs.ChartsDisabledPlug.html
 TrentoWeb.Plugs.ExternalIdpGuardPlug.html
+TrentoWeb.Plugs.InvalidCredentialsErrorPlug.html
 TrentoWeb.Plugs.LoadUserPlug.html
 TrentoWeb.Plugs.NormalizeListsPlug.html
 TrentoWeb.Plugs.OperationsPolicyPlug.html
@@ -584,6 +598,7 @@ TrentoWeb.V1.HealthOverviewController.html
 TrentoWeb.V1.HealthOverviewJSON.html
 TrentoWeb.V1.HostController.html
 TrentoWeb.V1.HostJSON.html
+TrentoWeb.V1.OperationJSON.html
 TrentoWeb.V1.PersonalAccessTokensController.html
 TrentoWeb.V1.ProfileController.html
 TrentoWeb.V1.ProfileJSON.html
@@ -611,7 +626,7 @@ dist/lato-latin-700-normal-2XVSBPG4.woff2
 dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 dist/remixicon-ZWU5GQ4X.woff2
-dist/search_data-05D96BDB.js
-dist/sidebar_items-15447966.js
+dist/search_data-ED28E0FF.js
+dist/sidebar_items-EDAE3AD4.js
 index.html
 search.html

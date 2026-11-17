@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="dist/html-elixir-RXHHCTJW.css" />
 
-    <script defer src="dist/sidebar_items-15447966.js"></script>
+    <script defer src="dist/sidebar_items-EDAE3AD4.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-MI33G4N7.js"></script>
 
@@ -528,6 +528,25 @@ Derived from Commanded.AggregateCase</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Represents metric and its sample at a given time</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Checks.Enums.FrequencyUnit.html" translate="no">Trento.<wbr />Checks.<wbr />Enums.<wbr />FrequencyUnit</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents the units of the checks frequency.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Checks.Frequency.html" translate="no">Trento.<wbr />Checks.<wbr />Frequency</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>How often the checks run periodically on every target, such as hosts and clusters:
+every 5, 15 or 30 minutes, every 1, 6, 12 or 24 hours, or every 1, 2 or 4 weeks.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3272,6 +3291,78 @@ Here is where the actual integration with the external system happens and releva
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Periodic jobs run by Oban cron.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.ActivityLogCleaningJob.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs.<wbr />ActivityLogCleaningJob</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the activity log entries older than the retention time.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.ApiKeyExpirationAlertJob.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs.<wbr />ApiKeyExpirationAlertJob</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sends an alert when the API key is about to expire or expired.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.ClustersChecksExecutionJob.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs.<wbr />ClustersChecksExecutionJob</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a checks execution for every registered cluster with selected checks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.DiscoveryEventsPruningJob.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs.<wbr />DiscoveryEventsPruningJob</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the discovery events older than <code class="inline">older_than</code> days.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.HostsChecksExecutionJob.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs.<wbr />HostsChecksExecutionJob</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a checks execution for every registered host with selected checks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.Plugins.Periodic.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs.<wbr />Plugins.<wbr />Periodic</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Oban plugin that calls functions at a fixed interval, on the leader node only.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Jobs.SoftwareUpdatesDiscoveryJob.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Jobs.<wbr />SoftwareUpdatesDiscoveryJob</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Discovers the available software updates of the registered hosts.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Messaging.html" translate="no">Trento.<wbr />Infrastructure.<wbr />Messaging</a>
 
   </div>
@@ -3534,6 +3625,15 @@ Chart time series objects</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Operations.Enums.ClusterBulkOperations.html" translate="no">Trento.<wbr />Operations.<wbr />Enums.<wbr />ClusterBulkOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cluster operations that can be requested on multiple clusters at once</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Operations.Enums.ClusterHostOperations.html" translate="no">Trento.<wbr />Operations.<wbr />Enums.<wbr />ClusterHostOperations</a>
 
   </div>
@@ -3557,6 +3657,15 @@ Chart time series objects</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Database operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.Enums.HostBulkOperations.html" translate="no">Trento.<wbr />Operations.<wbr />Enums.<wbr />HostBulkOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Host operations that can be requested on multiple hosts at once</p></div>
 
 </div>
 <div class="summary-row">
@@ -4138,15 +4247,6 @@ deployed SAP systems, which is composed by the application layer.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Trento.Scheduler.html" translate="no">Trento.<wbr />Scheduler</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>Defines a quantum Scheduler.</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="Trento.Services.HealthService.html" translate="no">Trento.<wbr />Services.<wbr />HealthService</a>
 
   </div>
@@ -4188,6 +4288,15 @@ deployed SAP systems, which is composed by the application layer.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>ApiKeySettings is the STI projection of api key related settings</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Settings.ChecksFrequencySettings.html" translate="no">Trento.<wbr />Settings.<wbr />ChecksFrequencySettings</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>ChecksFrequencySettings is the STI projection of the global checks frequency.</p></div>
 
 </div>
 <div class="summary-row">
@@ -4684,6 +4793,15 @@ Uses Joken as jwt base library</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="TrentoWeb.Auth.FakeIdentityProvider.html" translate="no">TrentoWeb.<wbr />Auth.<wbr />FakeIdentityProvider</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assent HTTP adapter faking an OAuth2/OIDC identity provider.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="TrentoWeb.Auth.PersonalAccessToken.html" translate="no">TrentoWeb.<wbr />Auth.<wbr />PersonalAccessToken</a>
 
   </div>
@@ -5100,6 +5218,15 @@ password, and optional TOTP code for secure login to the Trento platform.</p></d
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="TrentoWeb.Plugs.InvalidCredentialsErrorPlug.html" translate="no">TrentoWeb.<wbr />Plugs.<wbr />InvalidCredentialsErrorPlug</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Renders the invalid credentials error of the fallback controller.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="TrentoWeb.Plugs.LoadUserPlug.html" translate="no">TrentoWeb.<wbr />Plugs.<wbr />LoadUserPlug</a>
 
   </div>
@@ -5315,6 +5442,13 @@ to receive personal broadcasts</p></div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="TrentoWeb.V1.HostJSON.html" translate="no">TrentoWeb.<wbr />V1.<wbr />HostJSON</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.V1.OperationJSON.html" translate="no">TrentoWeb.<wbr />V1.<wbr />OperationJSON</a>
 
   </div>
 

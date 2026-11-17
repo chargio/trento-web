@@ -88,6 +88,11 @@ Derived from Commanded.AggregateCase
 - [Trento.Charts.Hosts.HostMemoryChart](Trento.Charts.Hosts.HostMemoryChart.md): Represents Memory chart data for a single host
 - [Trento.Charts.SampledMetric](Trento.Charts.SampledMetric.md): Represents metric and its sample at a given time
 
+- [Trento.Checks.Enums.FrequencyUnit](Trento.Checks.Enums.FrequencyUnit.md): Type that represents the units of the checks frequency.
+
+- [Trento.Checks.Frequency](Trento.Checks.Frequency.md): How often the checks run periodically on every target, such as hosts and clusters:
+every 5, 15 or 30 minutes, every 1, 6, 12 or 24 hours, or every 1, 2 or 4 weeks.
+
 - [Trento.Commanded](Trento.Commanded.md): Trento Commanded Application
 
 - [Trento.DataCase](Trento.DataCase.md): This module defines the setup for tests requiring
@@ -182,11 +187,15 @@ tests that require setting an event store.
 
 - [Trento.Operations.DatabasePolicy](Trento.Operations.DatabasePolicy.md): DatabaseReadModel operation policies
 
+- [Trento.Operations.Enums.ClusterBulkOperations](Trento.Operations.Enums.ClusterBulkOperations.md): Cluster operations that can be requested on multiple clusters at once
+
 - [Trento.Operations.Enums.ClusterHostOperations](Trento.Operations.Enums.ClusterHostOperations.md): Cluster host operations
 
 - [Trento.Operations.Enums.ClusterOperations](Trento.Operations.Enums.ClusterOperations.md): Cluster operations
 
 - [Trento.Operations.Enums.DatabaseOperations](Trento.Operations.Enums.DatabaseOperations.md): Database operations
+
+- [Trento.Operations.Enums.HostBulkOperations](Trento.Operations.Enums.HostBulkOperations.md): Host operations that can be requested on multiple hosts at once
 
 - [Trento.Operations.Enums.HostOperations](Trento.Operations.Enums.HostOperations.md): Host operations
 
@@ -211,7 +220,6 @@ installed.
 
 - [Trento.Repo](Trento.Repo.md)
 - [Trento.Router](Trento.Router.md)
-- [Trento.Scheduler](Trento.Scheduler.md): Defines a quantum Scheduler.
 - [Trento.Settings](Trento.Settings.md): Provides a set of functions of settings related usecases.
 
 - [Trento.Settings.ActivityLogSettings](Trento.Settings.ActivityLogSettings.md): ActivityLogSettings is the STI projection of activity log related settings
@@ -220,6 +228,7 @@ installed.
 
 - [Trento.Settings.ApiKeySettings](Trento.Settings.ApiKeySettings.md): ApiKeySettings is the STI projection of api key related settings
 
+- [Trento.Settings.ChecksFrequencySettings](Trento.Settings.ChecksFrequencySettings.md): ChecksFrequencySettings is the STI projection of the global checks frequency.
 - [Trento.Settings.InstallationSettings](Trento.Settings.InstallationSettings.md): InstallationSettings is the STI projection containing installation related settings
 
 - [Trento.Settings.Policy](Trento.Settings.Policy.md): Policy for the Settings resource
@@ -754,6 +763,20 @@ delegates to `Sagents.AgentsDynamicSupervisor`.
 
   - [Trento.Infrastructure.Discovery.AMQP.Publisher](Trento.Infrastructure.Discovery.AMQP.Publisher.md): AMQP discovery publisher
 
+  - [Trento.Infrastructure.Jobs](Trento.Infrastructure.Jobs.md): Periodic jobs run by Oban cron.
+  - [Trento.Infrastructure.Jobs.ActivityLogCleaningJob](Trento.Infrastructure.Jobs.ActivityLogCleaningJob.md): Deletes the activity log entries older than the retention time.
+
+  - [Trento.Infrastructure.Jobs.ApiKeyExpirationAlertJob](Trento.Infrastructure.Jobs.ApiKeyExpirationAlertJob.md): Sends an alert when the API key is about to expire or expired.
+
+  - [Trento.Infrastructure.Jobs.ClustersChecksExecutionJob](Trento.Infrastructure.Jobs.ClustersChecksExecutionJob.md): Requests a checks execution for every registered cluster with selected checks.
+
+  - [Trento.Infrastructure.Jobs.DiscoveryEventsPruningJob](Trento.Infrastructure.Jobs.DiscoveryEventsPruningJob.md): Deletes the discovery events older than `older_than` days.
+
+  - [Trento.Infrastructure.Jobs.HostsChecksExecutionJob](Trento.Infrastructure.Jobs.HostsChecksExecutionJob.md): Requests a checks execution for every registered host with selected checks.
+
+  - [Trento.Infrastructure.Jobs.Plugins.Periodic](Trento.Infrastructure.Jobs.Plugins.Periodic.md): Oban plugin that calls functions at a fixed interval, on the leader node only.
+  - [Trento.Infrastructure.Jobs.SoftwareUpdatesDiscoveryJob](Trento.Infrastructure.Jobs.SoftwareUpdatesDiscoveryJob.md): Discovers the available software updates of the registered hosts.
+
   - [Trento.Infrastructure.Messaging](Trento.Infrastructure.Messaging.md): Publishes messages to the message bus
 
   - [Trento.Infrastructure.Messaging.Adapter.AMQP](Trento.Infrastructure.Messaging.Adapter.AMQP.md): AMQP adapter
@@ -885,6 +908,7 @@ Uses Joken as jwt base library
 
   - [TrentoWeb.Auth.AssentSamlStrategy](TrentoWeb.Auth.AssentSamlStrategy.md): Assent strategy to handle SAML authentication
 
+  - [TrentoWeb.Auth.FakeIdentityProvider](TrentoWeb.Auth.FakeIdentityProvider.md): Assent HTTP adapter faking an OAuth2/OIDC identity provider.
   - [TrentoWeb.Auth.PersonalAccessToken](TrentoWeb.Auth.PersonalAccessToken.md): PersonalAccessToken represents a users' generated token.
 
   - [TrentoWeb.Auth.RefreshToken](TrentoWeb.Auth.RefreshToken.md):   Refresh token is the module responsible for creating a proper jwt refresh token
@@ -958,6 +982,7 @@ password, and optional TOTP code for secure login to the Trento platform.
   - [TrentoWeb.Plugs.ChartsDisabledPlug](TrentoWeb.Plugs.ChartsDisabledPlug.md):   This plug acts as a barrier for the charts endpoint, return 501 for all the requests.
   - [TrentoWeb.Plugs.ExternalIdpGuardPlug](TrentoWeb.Plugs.ExternalIdpGuardPlug.md): This plug acts as a guard for certain actions/endpoint to disable them when an external idp integration is enabled
 
+  - [TrentoWeb.Plugs.InvalidCredentialsErrorPlug](TrentoWeb.Plugs.InvalidCredentialsErrorPlug.md): Renders the invalid credentials error of the fallback controller.
   - [TrentoWeb.Plugs.LoadUserPlug](TrentoWeb.Plugs.LoadUserPlug.md): LoadUserPlug loads the stateless user from jwt from the database.
 The current user is replaced with the stateful user for subsequent plugs
 
@@ -996,6 +1021,7 @@ to receive personal broadcasts
   - [TrentoWeb.V1.HealthOverviewJSON](TrentoWeb.V1.HealthOverviewJSON.md)
   - [TrentoWeb.V1.HostController](TrentoWeb.V1.HostController.md)
   - [TrentoWeb.V1.HostJSON](TrentoWeb.V1.HostJSON.md)
+  - [TrentoWeb.V1.OperationJSON](TrentoWeb.V1.OperationJSON.md)
   - [TrentoWeb.V1.PersonalAccessTokensController](TrentoWeb.V1.PersonalAccessTokensController.md)
   - [TrentoWeb.V1.ProfileController](TrentoWeb.V1.ProfileController.md)
   - [TrentoWeb.V1.ProfileJSON](TrentoWeb.V1.ProfileJSON.md)
